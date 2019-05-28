@@ -1,10 +1,69 @@
-<h1>{{title}}</h1>
-<p>Proyecto Final, Clavería Cervantes Miguel Ángel</p>
+<body bgcolor="black">
+<h1>API NFL Teams</h1>
+<p>Proyecto Final, Ingeniería en Software</p>
 <div class="jumbotron">
-  <h1 class="display-4">API NFL teams</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-</div>
+  <h1 class="display-4">Clavería Cervantes Miguel Ángel</h1>
+  
+<h1>Buscar equipo</h1> 
+<form action="/api/nfl/ method="get">
+ Selecciona equipo:
+  <select name="nombre">
+  <option>Bills</option>
+  <option value="Dolphins">Dolphins</option>
+  <option value="Patriots">Patriots</option>
+  <option value="Jets">Jets</option>
+  <option value="Ravens">Ravens</option>
+  <option value="Bengals">Bengals</option>
+  <option value="Browns">Browns</option>
+  <option value="Steelers">Steelers</option>
+  <option value="Texans">Texans</option>
+  <option value="Colts">Colts</option>
+  <option value="Jaguars">Jaguars</option>
+  <option value="Titans">Titans</option>
+  <option value="Broncos">Broncos</option>
+  <option value="Chiefs">Chiefs</option>
+  <option value="Chargers">Chargers</option>
+  <option value="Raiders">Raiders</option>
+  <option value="Cowboys">Cowboys</option>
+  <option value="Giants">Giants</option>
+  <option value="Eagles">Eagles</option>
+  <option value="Redskins">Redskins</option>
+  <option value="Bears">Bears</option>
+  <option value="Lions">Lions</option>
+  <option value="Packers">Packers</option>
+  <option value="Vikings">Vikings</option>
+  <option value="Falcons">Falcons</option>
+  <option value="Panthers">Panthers</option>
+  <option value="Saints">Saints</option>
+  <option value="Buccaneers">Buccaneers</option>
+  <option value="Cardinals">Cardinals</option>
+  <option value="Rams">Rams</option>
+  <option value="49ers">49ers</option>
+  <option value="Seahawks">Seahawks</option>
+  </select>
+  <input type="submit"  value="Buscar">
+</form>
 
+
+<h1>Registro de nuevo equipo</h1>
+<form action="/api/nfl/" method="post">
+  <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500/nfl.png" alt="nfl">
+  <br><br>
+  <input type="text" placeholder="Nombre del equipo" name="nombre" >
+  Conferencia:
+  <select name="conferencia">
+  <option value="AFC">AFC</option>
+  <option value="NFC">NFC</option>
+  </select>
+  División:
+  <select name="division">
+  <option value="Este">Este</option>
+  <option value="Norte">Norte</option>
+   <option value="Sur">Sur</option>
+  <option value="Oeste">Oeste</option>
+  </select>
+  <input type="text" placeholder="Ciudad" name="ciudad" >
+  <input type="submit"  value="Guardar">
+</form>
+
+</body>

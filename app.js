@@ -4,9 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var mongoose = require('mongoose');
+var Equipo = require('./models/team.js'); 
+
+mongoose.connect('mongodb+srv://mikeclavcer:312082110@cluster0-xxtnf.gcp.mongodb.net/NFLteam?retryWrites=true',
+ {useNewUrlParser: true}).then(() => { console.log('Conectado a Mongo DB Atlas')}).catch(err => console.log(err));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var nflRouter = require('./routes/nfl');
 
 var app = express();
 
@@ -22,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/nfl', nflRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
