@@ -6,6 +6,7 @@ var EquipoSchema =  Schema({
   conferencia: String,
   division: String,
   ciudad: String,
+  image: String,
 
 });
 

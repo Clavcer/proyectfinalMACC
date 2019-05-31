@@ -27,19 +27,19 @@ router.get('/:id', function(req, res, next) {
     }
 
   });
-  //res.json(req.params.userId);
+
 });
 
 
-/*Verbo POST, nuevo equipo*/
+/*POST, nuevo equipo*/
 router.post('/', function(req, res, next) {
   var nuevoequip=  Equipo({
     nombre: req.body.nombre,
     conferencia: req.body.conferencia,
     division: req.body.division,
     ciudad: req.body.ciudad,
+    image: req.body.image,
   });
-  //res.send(usuario);
 
 
   nuevoequip.save(function(err, data) {
@@ -54,20 +54,25 @@ router.post('/', function(req, res, next) {
 
 });
 
-/*
-router.put('/api/nfl/:id',(req,res)=>{
-  if (!validarBody(req.body.nota)){
-    res.status(400).send(mensajeErroneo);
-  }
-  else if (!validarId(req.params.id)){
-    res.status(404).send(mensajeNoEncontrado);
-  }
-  else{
-    actualizarNota( req.params.id ,req.body.nota);
-    res.send(mensajeCorrecto);
-  }
+
+/*PUT, Cambiar ciudad*/
+router.put('/:id', function(req, res, next) {
+  Equipo.findOneAndUpdate({'nombre': req.params.id},{'ciudad': req.body.ciudad}, 
+    function(err, data) {
+    if (err) {
+      res.status(404).json(err);
+    } else {
+      res.status(200).json(data);
+    } 
+  });
+
 });
-*/
+
+router.put('/',function(req, res, next){
+  res.status(405).json({mensaje: 'Acción no permitida'});
+})
+
+
 
 /*DELETE */
 router.delete('/:id', function(req, res, next) {
