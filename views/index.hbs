@@ -1,24 +1,42 @@
-<body bgcolor="black">
-<h1>Proyecto Final, Ingeniería en Software</h1>
-<h4>Clavería Cervantes Miguel Ángel</h4>
-<h5>Grupo: 2660</h5>
+<div class="text-center">
+  <img src="http://insidestl.com/wp-content/uploads/2015/12/NFL-Header-Generic_2.jpg" alt="header nfl">
+</div>
+
+<div class="p-3 mb-2 bg-light text-dark"><h1>Proyecto Final, Ingeniería en Software</h1><br><h4>Clavería Cervantes Miguel Ángel</h4><br><h5>Grupo: 2660</h5></div>
+
+
+
+
 <div class="jumbotron">
-  <h1 class="display-4">NFL Teams</h1>
-  
-<a class="btn btn-primary" href="/api/nfl" role="button">Buscar API</a>
-<br><br>
+ 
+ <div class="card mb-3" style="max-width: 400px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="https://66.media.tumblr.com/avatar_741f2532aca0_128.pnj" alt="teamsnfl">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">API NFL Teams</h5>
+        <a class="btn btn-primary" href="/api/nfl" role="button">Buscar API</a>
+      </div>
+    </div>
+  </div>
+</div> 
+ <br><br>
 
 
 <h1>Registro de nuevo equipo</h1>
 <form action="/api/nfl/" method="post">
-  <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500/nfl.png" alt="nfl">
+  <img src="https://openelectiondata.net/images/inventory/categories/ballot-qualification.png" alt="registro">
   <br><br>
   <input type="text" placeholder="Nombre del equipo" name="nombre" required>
+  <br><br>
   Conferencia:
   <select name="conferencia">
   <option value="AFC">AFC</option>
   <option value="NFC">NFC</option>
   </select>
+  <br><br>
   División:
   <select name="division">
   <option value="Este">Este</option>
@@ -26,10 +44,12 @@
    <option value="Sur">Sur</option>
   <option value="Oeste">Oeste</option>
   </select>
+  <br><br>
   <input type="text" placeholder="Ciudad" name="ciudad" required>
+  <br><br>
   <input type="url" name="image" placeholder="URL de imagen" autocomplete="off" required> 
+  <br><br>
   <input type="submit"  value="Guardar">
 </form>
 
 
-</body>
